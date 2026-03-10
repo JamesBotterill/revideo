@@ -12,9 +12,13 @@
   "keywords": [],
   "author": "revideo",
   "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
   "devDependencies": {
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
     "postcss": "^8.4.47",
@@ -23,8 +27,6 @@
   },
   "dependencies": {
     "@revideo/core": "0.10.4",
-    "react": "^18",
-    "react-dom": "^18",
     "uuid": "^10.0.0"
   }
 }

@@ -1,12 +1,13 @@
 'use client';
 import type {Player as CorePlayer, Project} from '@revideo/core';
-import type {ComponentProps} from 'react';
+import type {MouseEventHandler, Ref} from 'react';
 import {useCallback, useEffect, useRef, useState} from 'react';
 import {Controls} from './controls';
 import './index.css';
 import {shouldShowControls} from './utils';
 
 interface RevideoPlayerProps {
+  ref?: Ref<HTMLElement>;
   playing?: string;
   variables?: string;
   looping?: string;
@@ -15,13 +16,13 @@ interface RevideoPlayerProps {
   quality?: number;
   fps?: number;
   volume?: number;
+  onClick?: MouseEventHandler<HTMLElement>;
 }
 
-declare global {
+declare module 'react' {
   namespace JSX {
     interface IntrinsicElements {
-      // eslint-disable-next-line
-      'revideo-player': RevideoPlayerProps & ComponentProps<'div'>;
+      'revideo-player': RevideoPlayerProps;
     }
   }
 }
